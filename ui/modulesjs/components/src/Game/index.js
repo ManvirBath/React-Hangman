@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Question from './Question';
 import Hangman from './Hangman';
 import Guess from './Guess';
+import Keys from './Keys';
 
 export default class Game extends Component{
     constructor(props){
@@ -17,19 +18,33 @@ export default class Game extends Component{
                     a: "Bruce Wayne"
                 }
             ],
-            currentIndex: 0
+            currentIndex: 0,
+            tries: 0,
+            currentGuess: new Array(1).join('_'),
         }
+    }
+    _handleKeyPress = (event)=>{
+        debugger;
+        this.setState({tries: this.state.tries -1});
+    }
+    componentDidMount() {
+        document.addEventListener('keydown',this.handleKeyPress,false);
+    }
+    componentWillUnmount() {
+        document.removeEventListener('keydown',this.handleKeyPress,false);
     }
     render(){
         const index = this.state.currentIndex;
         const question = this.state.questions[index].q;
         const answer= this.state.questions[index].a;
+        const currentGuess = this.state.currentGuess;
         return(
-            <div className="game">
+            <React.Fragment className="game">
                 <Question question={question}/>
+                <Keys/>
                 <Hangman/>
-                <Guess answer={answer}/>
-            </div>
+                <Guess currentGuess={currentGuess}/>
+            </React.Fragment>
         );
     }
 }
