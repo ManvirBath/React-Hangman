@@ -1,0 +1,45 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "Hangman Game",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node nodeServer/server.js",
+    "dev": "run-p server webpack",
+    "start": "npm run dev",
+    "webpack": "webpack --config ./webpack.config.js --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManvirBath/React-Hangman.git"
+  },
+  "author": "Manvir Bath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManvirBath/React-Hangman/issues"
+  },
+  "homepage": "https://github.com/ManvirBath/React-Hangman#readme",
+  "dependencies": {
+    "ajv": "^6.8.1",
+    "express": "^4.16.4",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "webpack": "^4.29.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.13.0",
+    "npm-run-all": "^4.1.5",
+    "webpack-cli": "^3.2.3"
+  }
+}
