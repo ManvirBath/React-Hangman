@@ -1,3 +1,23 @@
-canvas {
-    border-style: solid;
+:root {
+    --main-color: #466362;
+    --brown: #7E6551;
+    --blue: #8896AB;
+    --light-blue: #C5D5E4;
+    --pink: #938581;
+
+}
+.game{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--main-color);
+}
+.game .questionHeader{
+    padding:30px 0px;
+    width: 90%;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid var(--pink);
+    background-color: var(--brown);
+    margin: 10px;
 }

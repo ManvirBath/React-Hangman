@@ -39,12 +39,12 @@ export default class Game extends Component{
         const answer= this.state.questions[index].a;
         const currentGuess = this.state.currentGuess;
         return(
-            <React.Fragment className="game">
+            <div className="game">
                 <Question question={question}/>
                 <Keys/>
                 <Hangman/>
                 <Guess currentGuess={currentGuess}/>
-            </React.Fragment>
+            </div>
         );
     }
 }
