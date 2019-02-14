@@ -12,12 +12,41 @@
     flex-direction: column;
     background-color: var(--main-color);
 }
+.game .center{
+    display: flex;
+    flex-direction: row;
+}
 .game .questionHeader{
     padding:30px 0px;
     width: 90%;
-    font-size: 15px;
+    font-size: 24px;
     text-align: center;
     border: 1px solid var(--pink);
     background-color: var(--brown);
     margin: 10px;
+}
+.game .keys {
+    content: "";
+    display: table;
+}
+.game .alphabet{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+.game .alphabet .key{
+    padding: 15px;
+    border: 1px solid white;
+    margin: 0px 3px;
+    border-radius: 10px;
+    text-align: center;
+}
+.game .alphabet .key:hover{
+    cursor: grab;
+    transition: background .5s ease;
+    background: var(--blue);
+    color: white;
+}
+.game .alphabet .key:active{
+    cursor: grabbing;
 }

@@ -24,7 +24,6 @@ export default class Game extends Component{
         }
     }
     _handleKeyPress = (event)=>{
-        debugger;
         this.setState({tries: this.state.tries -1});
     }
     componentDidMount() {
@@ -41,8 +40,10 @@ export default class Game extends Component{
         return(
             <div className="game">
                 <Question question={question}/>
-                <Keys/>
-                <Hangman/>
+                <div className="center">
+                    <Keys eventHandler={this._handleKeyPress}/>
+                    <Hangman/>
+                </div>
                 <Guess currentGuess={currentGuess}/>
             </div>
         );

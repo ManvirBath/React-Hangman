@@ -3,6 +3,8 @@ import React,{Component} from 'react';
 export default class Hangman extends Component{
     constructor(props) {
         super(props);
+        this.height = '240';
+        this.width = '300';
         this.state = {
             canvas: null,
             ctx: null,
@@ -13,8 +15,8 @@ export default class Hangman extends Component{
         const ctx = canvas.getContext('2d');
         this.setState({canvas,ctx});
         //this line is for the large vertical
-        ctx.moveTo(320,180);
-        ctx.lineTo(320,380);
+        ctx.moveTo(10,this.height-100);
+        ctx.lineTo(10,0);
         //this line is for the short horizontal at the top
         ctx.moveTo(320,180);
         ctx.lineTo(400,180);
@@ -25,13 +27,17 @@ export default class Hangman extends Component{
         ctx.moveTo(320-80,380);
         ctx.lineTo(320+80,380);
         ctx.stroke();
+        //this is the head
+        ctx.beginPath();
+        ctx.arc(100,75,50,0,2*Math.PI);
+        ctx.stroke();
     }
     componentDidUpdate(prevProps) {
     }
     render(){
         return(
             <div className="hangman_wrapper">
-                <canvas ref="canvas" width="640" height="480">
+                <canvas ref="canvas" width={this.width} height={this.height}>
                     Your browser does not support HTML5 canvas tag
                 </canvas>
             </div>
